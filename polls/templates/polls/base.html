@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsregalo {% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                {% block body_content %}
+                  
+                {% endblock body_content %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

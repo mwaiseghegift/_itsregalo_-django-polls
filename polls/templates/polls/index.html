@@ -1,0 +1,33 @@
+{% extends "polls/base.html" %}
+{% load static %}
+{% block body_content %}
+ <br><br><hr> 
+<h4 style="text-align: center;">_itsregalo_ke hackathon</h4>
+<hr>
+<br><br>
+
+<h1 class="text-centre mb-3">
+    {% if latest_question_list %}
+
+        {% for question in latest_question_list %}
+          
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="lead">{{ question.question_text }}</p>
+                    <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary btn-sm">
+                        Vote Now
+                    </a>
+                    <a href="{% url 'polls:results' question.id %}" class="btn btn-secondary btn-sm">
+                        results
+                    </a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+        <p>No polls</p>
+    {% endif %}
+</h1>
+
+{% endblock body_content %}
